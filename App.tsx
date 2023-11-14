@@ -1,13 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar'
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { Home } from './src/screen/Home'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
       <StatusBar style="auto" />
+      <SafeAreaView style={{ borderWidth: 1, flex: 1, width: '100%' }}>
+        <Home />
+      </SafeAreaView>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -17,4 +20,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+  home: {
+    borderWidth: 1,
+  },
+})
