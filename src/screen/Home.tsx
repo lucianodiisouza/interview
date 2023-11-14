@@ -4,6 +4,7 @@ import { words } from '../../constants'
 import { Input } from '../components/Input'
 import { WordsBlock } from '../components/WordsBlock'
 import { Score } from '../components/Score'
+import { CountdownTimer } from '../components/Timer'
 
 export function Home() {
   const [typedWord, setTypedWord] = useState<string>('')
@@ -28,7 +29,10 @@ export function Home() {
 
   return (
     <View style={styles.container}>
-      <Score points={pastRightWords.length} />
+      <View>
+        <CountdownTimer gameStarted={typedWord !== ''} />
+        <Score points={pastRightWords.length} />
+      </View>
       <Input typedWord={typedWord} setTypedWord={setTypedWord} />
       <WordsBlock pastRightWords={pastRightWords} />
       <TouchableOpacity style={styles.resetButton} onPress={resetWords}>
