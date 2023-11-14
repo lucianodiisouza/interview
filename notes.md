@@ -2,4 +2,4 @@
 - [x] compare the typed word with the word array and verify presence
 - [x] reveal work
 - [ ] timer
-- [ ] score
+- [x] score

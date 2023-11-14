@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { words } from '../../constants'
 import { Input } from '../components/Input'
 import { WordsBlock } from '../components/WordsBlock'
+import { Score } from '../components/Score'
 
 export function Home() {
   const [typedWord, setTypedWord] = useState<string>('')
@@ -27,6 +28,7 @@ export function Home() {
 
   return (
     <View style={styles.container}>
+      <Score points={pastRightWords.length} />
       <Input typedWord={typedWord} setTypedWord={setTypedWord} />
       <WordsBlock pastRightWords={pastRightWords} />
       <TouchableOpacity style={styles.resetButton} onPress={resetWords}>
